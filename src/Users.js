@@ -78,12 +78,9 @@ const Users =  () => {
 
 
     const deleteUser =(data) => {
-        const payload ={
-            id:data.id,
-            name:data.name,
-        }
 
-        Axios.delete('http://localhost:8080/api/v1/deleteuser', {data: payload})
+
+        Axios.delete(`http://localhost:8080/api/v1/deleteuser/${data.id}`)
             .then(() =>{
                 getUsers();
             })
